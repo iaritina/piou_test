@@ -4,6 +4,7 @@ use App\Http\Controllers\FeedCtrl;
 use App\Http\Controllers\LinkCtrl;
 use App\Http\Controllers\PocketCtrl;
 use App\Http\Controllers\UserCtrl;
+use App\Http\Controllers\RegisterController;
 use App\Livewire\Bookmarks\BookmarkList;
 use App\Livewire\Feed\Links;
 use App\Livewire\Link\Show;
@@ -105,3 +106,7 @@ Route::get('links/{link}', Show::class)
 Route::get('bookmarks', BookmarkList::class)
     ->middleware(['auth'])
     ->name('bookmarks.index');
+
+// Route pour l'inscription utilisateur
+Route::get('/register',[RegisterController::class,'index'])->name("user.register");
+Route::post('/register',[RegisterController::class,'saveUser'])->name("user.register.store");
