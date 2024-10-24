@@ -34,4 +34,8 @@
             <button class="btn btn-primary w-100" type="submit">{{ __('Se connecter') }}</button>
         </div>
     </form>
+    <!-- Lien pour l'inscription utilisateurs sur Feature1 -->
+    <div class="text-center text-secondary mt-3">
+        <a href="{{ route('user.register') }}">S'inscrire ici</a> 
+    </div>
 @endsection
